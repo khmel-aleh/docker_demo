@@ -1,0 +1,5 @@
+# pull vnc firefox image 
+docker pull selenoid/vnc:firefox_57.0
+
+# run selenoid hub
+docker run -d --name selenoid -p 4444:4444 -v /var/run/docker.sock:/var/run/docker.sock -v `pwd`/config/:/etc/selenoid/:ro aerokube/selenoid:latest-release
